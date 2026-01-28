@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>   
+    <div id="navBar">
+        <ul>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Friends</a></li>
+            <li><a href="#">Messenger</a></li>
+            <li><a href="#">My Pics</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // 1- Change div id from navBar to socialNetworkNavigation
+    const navBarDiv = document.getElementById("navBar");
+    navBarDiv.setAttribute("id", "socialNetworkNavigation");
+
+    // 2- Create a new <li>
+    const newLi = document.createElement("li");
+
+    // 3- Create a text node "Logout" 
+    const logoutLink = document.createElement("a");
+    logoutLink.textContent = "Logout";
+    logoutLink.href = "#";
+
+    // 4- Append the text node to the <li>
+    newLi.appendChild(logoutLink);
+    
+ 
+    // 5- Append the new <li> to the <ul>
+    const ul = navBarDiv.querySelector("ul");  
+    ul.appendChild(newLi);                
+    //4-Use the firstElementChild and the lastElementChild properties to retrieve the first and last <li> elements from their parent element (<ul>). Display the text of each link
+    console.log(ul.firstElementChild.textContent);
+    console.log(ul.lastElementChild.textContent);
+
+</script>
+</html>

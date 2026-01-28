@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>   
+    <section class="listBooks">
+    </section>
+</body>
+<script>
+const allBooks = [
+    {
+        title: "Harry Potter and the Philosopher's Stone",
+        author: "J.K. Rowling",
+        image: "https://images-na.ssl-images-amazon.com/images/I/81YOuOGFCJL.jpg",
+        alreadyRead: true
+    },
+    {
+        title: "The Hobbit",
+        author: "J.R.R. Tolkien",
+        image: "https://images-na.ssl-images-amazon.com/images/I/91b0C2YNSrL.jpg",
+        alreadyRead: false
+    }
+];
+
+console.log(allBooks);
+
+// نختار section حسب class
+const section = document.querySelector(".listBooks");
+
+for (let i = 0; i < allBooks.length; i++) {
+    const book = allBooks[i];
+
+    const bookDiv = document.createElement("div");
+    bookDiv.style.border = "1px solid #ccc";
+    bookDiv.style.padding = "10px";
+    bookDiv.style.margin = "10px";
+    bookDiv.style.width = "200px";
+    bookDiv.style.display = "inline-block";
+    bookDiv.style.verticalAlign = "top";
+
+    const title = document.createElement("h3");
+    title.textContent = book.title;
+    bookDiv.appendChild(title);
+
+    const author = document.createElement("p");
+    author.textContent = "Author: " + book.author;
+    bookDiv.appendChild(author);
+
+    const img = document.createElement("img");
+    img.src = book.image;
+    img.alt = book.title;
+    img.style.width = "100%";
+    bookDiv.appendChild(img);
+
+
+    section.appendChild(bookDiv);
+}
+</script>
+</html>
