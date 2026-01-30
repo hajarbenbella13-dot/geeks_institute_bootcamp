@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+<body>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="firstname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lastname"><br><br>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+    <ul class="usersAnswer"></ul>
+    <script>
+        const firstname = document.getElementById('fname');
+const lastname = document.getElementById('lname');
+const form = document.querySelector('form'); 
+const ulusersAnswer=document.querySelector('.usersAnswer');
+
+//1-Retrieve the form and console.log it.
+form.addEventListener('submit', function() {
+    console.log('First Name:', firstname.value, 'Last Name:', lastname.value);
+    firstname.value = '';
+    lastname.value = '';
+});
+//2-Retrieve the inputs by their id and console.log them
+  console.log(firstname);
+    console.log(lastname);
+ //3-Retrieve the inputs by their name attribute and console.log them.
+
+ const firstNameByName = document.getElementsByName('firstname')[0];
+    const lastNameByName = document.getElementsByName('lastname')[0];
+    console.log(firstNameByName);
+    console.log(lastNameByName);
+    //4-When the user submits the form (ie. submit event listener)
+    form.addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    const li=document.createElement('li');
+    if (firstNameByName.value.trim() === '' || lastNameByName.value.trim() === ''){
+        alert('Please fill in both first name and last name fields.');
+        return;
+    }
+     
+    li.textContent=`First Name: ${firstNameByName.value}, Last Name: ${lastNameByName.value}`;
+    ulusersAnswer.appendChild(li);
+    firstname.value = '';
+    lastname.value = '';
+});
+
+
+    </script>
+</body>
+
+</html>
