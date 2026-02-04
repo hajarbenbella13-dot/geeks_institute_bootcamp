@@ -29,7 +29,7 @@ isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 6) //false
 
 // ===== Exercise 4
 
-<script>
+
 let table = document.body.firstElementChild; // the table
 
 // loop through all rows
@@ -37,6 +37,6 @@ for (let i = 0; i < table.rows.length; i++) {
     // color the diagonal cell
     table.rows[i].cells[i].style.backgroundColor = "red";
 }
-</script>
+
 
 // ===== Exercise ...
